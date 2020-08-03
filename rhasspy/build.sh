@@ -52,6 +52,8 @@ if [ -d Docker/host_volumes/rhasspy-from-git ] ; then
   fi
 fi
 
+# So the docker container can start with out a installed Rhasspy.
+sed -i "s/command: \/home\/pi\/bin\/rhasspy/#command: \/home\/pi\/bin\/rhasspy/" ./docker-compose.yml
 
 docker-compose up -d
 
