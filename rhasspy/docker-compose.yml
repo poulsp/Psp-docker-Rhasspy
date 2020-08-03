@@ -21,20 +21,21 @@ services:
     init: true
     restart: unless-stopped
     #command: /home/pi/bin/rhasspy
-        - "/etc/localtime:/etc/localtime:ro"
-        - ./Docker/host_volumes/config:/home/pi/.config
-        - ./Docker/host_volumes/rhasspy-from-git:/home/pi/rhasspy
-        - ./Docker/host_volumes/bin:/home/pi/bin
-        - ./Docker/host_volumes/installl-scripts:/installl-scripts
-        - ./Docker/host_volumes/transport:/transport
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - ./Docker/host_volumes/config:/home/pi/.config
+      - ./Docker/host_volumes/rhasspy-from-git:/home/pi/rhasspy
+      - ./Docker/host_volumes/bin:/home/pi/bin
+      - ./Docker/host_volumes/installl-scripts:/installl-scripts
+      - ./Docker/host_volumes/transport:/transport
 
     devices:
-        - "/dev/snd:/dev/snd"
+      - "/dev/snd:/dev/snd"
     ports:
-        - "12101:12101"
-        #- "12184:12184"
-        - "1883:12183"
-        #- "1884:12184"
+      - "12101:12101"
+      #- "12184:12184"
+      - "1883:12183"
+      #- "1884:12184"
 
 # if you know Docker you know what this is.
 #     networks:

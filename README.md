@@ -34,7 +34,7 @@ To shutdown the Rhasspy container enter: `"docker-compose down"`.
 Psp-docker-Rhasspy ships under GPLv3, it means you are free to use and redistribute the code but are not allowed to use any part of it under a closed license.
 
 Rhasspy lives at [github.com/rhasspy/rhasspy](https://github.com/rhasspy/rhasspy)
-Rhasspyis licensed under the MIT License and Copyright (c) 2019-2020 Michael Hansen.
+Rhasspy is licensed under the MIT License and Copyright (c) 2019-2020 Michael Hansen.
 
 ## Disclaimer.
 I have made this repo for my self but wanted to share it.
