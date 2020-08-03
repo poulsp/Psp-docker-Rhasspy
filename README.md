@@ -10,12 +10,12 @@ Read [Installing](#Installing).
 
 ## Installing.
 `build.sh` builds the docker images and the Rhasspy.
-
+  - Go into the rhasspy folder: `cd rhasspy`
   - Enter **`"bash build.sh"`**
-    With `"bash build.sh"` you get the right UID and GID in the image ant the container.
+  - With `"bash build.sh"` you get the right UID and GID in the image and the container.
 
-- When finished building the images you can enter: `"docker-compose up -d"`.
-  Visit `localhost:12101` in your browser.
+- When finished building  enter: `"docker-compose up -d"`.
+-  Visit `localhost:12101` in your browser.
 
 #### Running Rhasspy container Manual.
 You can run "rhasspy" manually edit the docker-compose.yml and comment out:
@@ -29,6 +29,11 @@ To run "rhasspy" automatically edit the docker-compose.yml and un-comment:
 Then enter `"docker-compose up -d"`.
 
 To shutdown the Rhasspy container enter: `"docker-compose down"`.
+
+##### You want to use or already have an external mqtt running.
+ - Edit the docker-compose.yml and comment out this line:
+- `#- "1883:12183""
+`
 
 ## 📜 License.
 Psp-docker-Rhasspy ships under GPLv3, it means you are free to use and redistribute the code but are not allowed to use any part of it under a closed license.

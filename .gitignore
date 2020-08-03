@@ -2,12 +2,10 @@
 *~
 *.bak
 
-
+*
 */*
 !Editor/*
 !rhasspy/*
 !README.md
-
-noter1.txt
 
 
