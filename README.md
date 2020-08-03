@@ -30,8 +30,8 @@ Then enter `"docker-compose up -d"`.
 
 To shutdown the Rhasspy container enter: `"docker-compose down"`.
 
-##### You want to use or already have an external mqtt running.
- - Edit the docker-compose.yml and comment out this line:
+##### You want to expose the internal mqtt broker.
+ - Edit the docker-compose.yml and un-comment this line:
 - `#- "1883:12183""
 `
 
