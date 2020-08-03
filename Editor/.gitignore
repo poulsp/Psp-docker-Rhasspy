@@ -1,0 +1,4 @@
+
+tmuxinator/*.yml
+*.sublime-project
+*.sublime-workspace

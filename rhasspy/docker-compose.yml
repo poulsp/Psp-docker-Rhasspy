@@ -1,0 +1,49 @@
+# Kort beskrivelse, formål? hvad,hvorfor
+#
+# docker-compose run --rm rhasspy bash
+# docker-compose down;docker-compose up -d; docker-compose exec rhasspy bash
+
+
+# docker-compose up;docker-compose down
+
+# docker-compose exec rhasspy bash
+
+# https://rhasspy.readthedocs.io/en/latest/
+
+version: '2.2'
+services:
+  rhasspy:
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile
+    image: "poulsp/rhasspy"
+    container_name: rhasspy
+    init: true
+    restart: unless-stopped
+    #command: /home/pi/bin/rhasspy
+        - "/etc/localtime:/etc/localtime:ro"
+        - ./Docker/host_volumes/config:/home/pi/.config
+        - ./Docker/host_volumes/rhasspy-from-git:/home/pi/rhasspy
+        - ./Docker/host_volumes/bin:/home/pi/bin
+        - ./Docker/host_volumes/installl-scripts:/installl-scripts
+        - ./Docker/host_volumes/transport:/transport
+
+    devices:
+        - "/dev/snd:/dev/snd"
+    ports:
+        - "12101:12101"
+        #- "12184:12184"
+        - "1883:12183"
+        #- "1884:12184"
+
+# if you know Docker you know what this is.
+#     networks:
+#       - rhasspy-nw
+
+# # # #
+# # # # [ networks definition ]
+# # # #
+# networks:
+#   rhasspy-nw:
+#     external:
+#       name: rhasspy-nw

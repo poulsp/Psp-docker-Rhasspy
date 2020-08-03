@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+cd /home/pi/rhasspy/rhasspy
+
+in_place="yes"
+#in_place="no"
+
+if [[ "${in_place}" == 'yes' ]]; then
+    # Run directly from source code
+    # Change by PS
+    #this_dir="$( cd "$( dirname "$0" )" && pwd )"
+    #this_dir=/home/pi/rhasspy/rhasspy
+    this_dir=/home/pi/rhasspy
+    # Change by PS
+    #"${this_dir}/bin/rhasspy-voltron" "$@"
+    "${this_dir}/bin/rhasspy-voltron" -p en
+else
+    # Use virtual environment as a prefix
+    prefix="/home/pi/rhasspy/rhasspy/.venv"
+    virtualenv="yes"
+    export RHASSPY_BASE_DIR="${prefix}/share/rhasspy"
+    export RHASSPY_WEB_DIR="${RHASSPY_BASE_DIR}/web"
+
+    if [[ "${virtualenv}" = 'yes' ]]; then
+        echo "Using virtual environment at ${prefix}"
+
+        # Use virtual environment
+        source "${prefix}/bin/activate"
+    fi
+
+    export LD_LIBRARY_PATH="${prefix}/lib:${LD_LIBRARY_PATH}"
+    export PATH="${prefix}/bin:${PATH}"
+    export KALDI_DIR="${prefix}/lib/kaldi"
+
+    rhasspy-voltron "$@"
+fi

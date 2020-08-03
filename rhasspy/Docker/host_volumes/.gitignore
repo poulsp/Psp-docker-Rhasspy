@@ -1,0 +1,18 @@
+# Joe's bak files m.m-
+*~
+*.bak
+
+/bin/*
+!/bin/rhasspy
+
+/config/rhasspy/profiles/en/*
+!/config/rhasspy/profiles/en/profile.json
+!/config/rhasspy/profiles/en/sentences.ini
+
+
+/transport/*
+!/transport/.keep
+
+#/config/*
+
+/rhasspy-from-git

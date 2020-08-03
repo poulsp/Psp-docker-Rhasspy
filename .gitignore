@@ -1,0 +1,13 @@
+# Joe's bak files m.m-
+*~
+*.bak
+
+
+*/*
+!Editor/*
+!rhasspy/*
+!README.md
+
+noter1.txt
+
+

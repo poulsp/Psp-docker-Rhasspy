@@ -1,0 +1,29 @@
+{
+    "dialogue": {
+        "system": "rhasspy"
+    },
+    "intent": {
+        "system": "fsticuffs"
+    },
+    "microphone": {
+        "pyaudio": {
+            "device": "6"
+        },
+        "system": "pyaudio"
+    },
+    "sounds": {
+        "aplay": {
+            "device": "default:CARD=Generic"
+        },
+        "system": "aplay"
+    },
+    "speech_to_text": {
+        "system": "kaldi"
+    },
+    "wake": {
+        "porcupine": {
+            "keyword_path": "snowboy.ppn"
+        },
+        "system": "porcupine"
+    }
+}

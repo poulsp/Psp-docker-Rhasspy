@@ -1,0 +1,56 @@
+  # ~/.tmuxinator/rhasspy.yml
+
+name: rhasspy
+root: ~/PATH-TO-YOUR-RHASSPY-PROJECT
+
+
+# Optional tmux socket
+# socket_name: foo
+
+#pre_window: docker-machine use default
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+pre: /home/YOUR-USER-NAME/PATH-TO-YOUR-RHASSPY-PROJECT/Editor/bin/pre-rhasspy-docker.sh
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+#startup_window: Work
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+#attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t default
+
+
+# Rhasspy
+windows:
+  - TERMINAL:
+    - mc
+
+  - Rhasspy docker run:
+    - cd rhasspy
+    - docker-compose up;docker-compose down
+
+  - Rhasspy-2:
+    - cd rhasspy-mine
+    - sleep 1
+    - docker-compose exec rhasspy bash
+    #- mc
+
+  - Rhasspy-3:
+    - cd rhasspy
+    - sleep 1
+    - docker ps -a
+    - sleep 1
+    - docker-compose exec rhasspy bash
+
