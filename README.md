@@ -18,12 +18,12 @@ Read [Installing](#Installing).
   Visit `localhost:12101` in your browser.
 
 #### Running Rhasspy container Manual.
-You can run "rhasspy" manually edit the docker-compose.yaml and comment out:
+You can run "rhasspy" manually edit the docker-compose.yml and comment out:
 - `#command: /home/pi/bin/rhasspy`  and afterward entering: `"docker-compose exec rhasspy bash"`.
 And inside the container enter: `"rhasspy"`.
 
 #### Running Rhasspy container  Automatic.
-To run "rhasspy" automatically edit the docker-compose.yaml and un-comment:
+To run "rhasspy" automatically edit the docker-compose.yml and un-comment:
 - `#command: /home/pi/bin/rhasspy`
 
 Then enter `"docker-compose up -d"`.
