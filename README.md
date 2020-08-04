@@ -32,8 +32,11 @@ To shutdown the Rhasspy container enter: `"docker-compose down"`.
 
 ##### You want to expose the internal mqtt broker.
  - Edit the docker-compose.yml and un-comment this line:
-- `#- "1883:12183""
-`
+- `#- "1883:12183"`
+
+##### You want to watch the log in the terminal.
+ - Use the combination:  `"docker-compose up;docker-compose down"`.
+
 
 ## 📜 License.
 Psp-docker-Rhasspy ships under GPLv3, it means you are free to use and redistribute the code but are not allowed to use any part of it under a closed license.
